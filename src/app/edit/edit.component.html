@@ -1,0 +1,17 @@
+<div class="row p-2">
+    <div class="col-6">
+        Title : 
+    </div>
+    <div class="col-6">
+        <input type="text" [(ngModel)]="selectedItem.title" (ngModelOptions)="{standalone : true}" class="form-control">
+    </div>
+    <div class="col-6">
+        Description:
+    </div>
+    <div class="col-6">
+        <input type="text" [(ngModel)]="selectedItem.description" (ngModelOptions)="{standalone : true}" class="form-control">
+    </div>
+    <div class="col-12">
+        <button class="btn btn-success" (click)="editClickHandler()"> ADD DATA </button>
+    </div>
+</div>

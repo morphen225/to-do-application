@@ -1,0 +1,25 @@
+<div  *ngIf="!showAddComponent" class="row">
+    <div class="col-6" *ngFor="let item of toDoList; index as i">
+        <div class="card" >
+            <div class="card-header">
+                {{item.title}}
+            </div>
+            <div class="card-body">
+                {{item.description}}
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary mr-2" (click)="editClickHanlder(i)" > EDIT </button>
+                <button class="btn btn-danger" (click)="deleteClickHandler(i)"> DELETE </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 text-center mt-2">
+        <button class="btn btn-primary" (click)="addItemClickHandler()"> ADD ITEM </button>
+    </div>
+</div>
+
+<div class="row" *ngIf="showAddComponent">
+    <div class="col-12">
+        <app-add [showComponent]="showAddComponent" (addDataEvent)="addDataEventHandler($event)"></app-add>
+    </div>
+</div>
